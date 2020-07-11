@@ -4,6 +4,6 @@
     {
         int X { get; }
         int Y { get; }
-        void UpdateState();
+        void UpdatePosition();
     }
 }

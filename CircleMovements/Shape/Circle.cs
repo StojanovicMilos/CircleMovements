@@ -13,10 +13,12 @@ namespace CircleMovements.Shape
             if (radius <= 0) throw new ArgumentOutOfRangeException(nameof(radius));
             _radius = radius;
             _speed = speed;
-            _angle = 0;
+            _angle = - Math.PI / 2;
+            Y = 0;
+            X = radius;
         }
 
-        public void UpdateState()
+        public void UpdatePosition()
         {
             X = _radius + (int) (_radius * Math.Cos(_angle));
             Y = _radius + (int) (_radius * Math.Sin(_angle));
