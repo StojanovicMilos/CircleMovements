@@ -9,6 +9,7 @@
         {
             _circleX = circleX;
             _circleY = circleY;
+            UpdatePosition();
         }
 
         public int X { get; private set; }

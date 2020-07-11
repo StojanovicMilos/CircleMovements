@@ -3,7 +3,7 @@ using CircleMovements.Shape;
 
 namespace CircleMovements.Drawing
 {
-    class ShapeDrawers : IShapeDrawer
+    public class ShapeDrawers : IShapeDrawer
     {
         private readonly IShapeDrawer[,] _shapeDrawers;
         
@@ -18,8 +18,8 @@ namespace CircleMovements.Drawing
 
             _shapeDrawers[0,0] = new DummyShapeDrawer();
 
-            Circle[] circlesX = GetCircles(numberOfRowsAndColumns, radius, baseSpeed);
-            Circle[] circlesY = GetCircles(numberOfRowsAndColumns, radius, baseSpeed);
+            Circle[] circlesX = GetCircles(numberOfRowsAndColumns, radius - thickness, baseSpeed);
+            Circle[] circlesY = GetCircles(numberOfRowsAndColumns, radius - thickness, baseSpeed);
 
             for (int i = 1; i < _shapeDrawers.GetLength(0); i++)
             {
@@ -40,7 +40,7 @@ namespace CircleMovements.Drawing
             }
         }
 
-        private Circle[] GetCircles(int numberOfRowsAndColumns, int radius, int baseSpeed)
+        private static Circle[] GetCircles(int numberOfRowsAndColumns, int radius, int baseSpeed)
         {
             Circle[] circles = new Circle[numberOfRowsAndColumns];
             for (int i = 0; i < circles.Length; i++)

@@ -16,6 +16,7 @@ namespace CircleMovements.Shape
             _angle = - Math.PI / 2;
             Y = 0;
             X = radius;
+            UpdatePosition();
         }
 
         public void UpdatePosition()
