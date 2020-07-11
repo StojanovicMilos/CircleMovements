@@ -1,6 +1,5 @@
 ﻿using System.Windows.Forms;
 using CircleMovements.Drawing;
-using CircleMovements.Shape;
 
 namespace CircleMovements
 {
@@ -9,7 +8,7 @@ namespace CircleMovements
         private readonly ShapeDrawers _shapeDrawers;
 
         private const int BaseSpeed = 1;
-        private const int Thickness = 4;
+        private const int Thickness = 2;
 
         private const int NumberOfRowsAndColumns = 10;
 
