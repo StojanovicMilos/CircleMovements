@@ -25,11 +25,16 @@ namespace CircleMovements.Drawing
 
         public void Draw()
         {
-            _graphics.FillEllipse(_previousBrush, _baseX + _shape.X - _thickness / 2,
-                _baseY + _shape.Y - _thickness / 2, _thickness, _thickness);
+            DrawWith(_previousBrush);
             _shape.UpdatePosition();
-            _graphics.FillEllipse(_currentBrush, _baseX + _shape.X - _thickness / 2, _baseY + _shape.Y - _thickness / 2,
-                _thickness, _thickness);
+            DrawWith(_currentBrush);
+        }
+
+        private void DrawWith(Brush brush)
+        {
+            int x = _baseX + _shape.X - _thickness / 2;
+            int y = _baseY + _shape.Y - _thickness / 2;
+            _graphics.FillEllipse(brush, x, y, _thickness, _thickness);
         }
     }
 }
